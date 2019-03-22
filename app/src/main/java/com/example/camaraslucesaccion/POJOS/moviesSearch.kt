@@ -2,27 +2,26 @@ package com.example.camaraslucesaccion.POJOS
 
 data class moviesSearch(
 
-    var PAGE : Int,
-    var TOTAL_RESULTS : Int,
-    var TOTAL_PAGES : Int,
-    var RESULTS : List<movie_Results?>?
+    val page : Int,
+    val total_results : Int,
+    val total_pages : Int,
+    val results : List<movie_Results>
 )
 
 data class movie_Results(
-    var VOTE_COUNT : Int?,
-    var ID : Int,
-    var VIDEO : Boolean?,
-    var VOTE_AVERAGE : Double?,
-    var TITLE : String?,
-    var POPULARITY: Double?,
-    var POSTER_PATH : String?,
-    var ORIGINAL_LANGUAGE : String?,
-    var ORIGINAL_TITLE : String?,
-    var GENRE_IDS : List<movie_genre_ids?>?,
-    var BACKDROP_PATH : String?,
-    var ADULT : Boolean?,
-    var OVERVIEW : String?,
-    var REALEASE_DATE : String?
+    val vote_count : Int,
+    val id : Int,
+    val video : Boolean,
+    val vote_average : Double,
+    val title : String,
+    val popularity : Double,
+    val poster_path : String,
+    val original_language : String,
+    val original_title : String,
+    val genre_ids : List<Int>,
+    val backdrop_path : String,
+    val adult : Boolean,
+    val overview : String,
+    val release_date : String
 )
 
-data class movie_genre_ids(var ID : Int? )
