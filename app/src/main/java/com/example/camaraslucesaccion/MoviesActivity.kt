@@ -38,7 +38,7 @@ class MoviesActivity {
 
                 Log.d("Titulo:", pelicula?.original_title)
                 Log.d("Calificación:", pelicula?.vote_average.toString())
-            } catch (fnfe: FileNotFoundException) {
+            }catch (fnfe: FileNotFoundException) {
                 Log.d("ERROR: ", "No se ha podido encontrar la película")
             } catch (npe: NullPointerException) {
             }
