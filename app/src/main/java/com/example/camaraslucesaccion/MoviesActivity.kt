@@ -15,13 +15,13 @@ import java.net.URL
 
 class MoviesActivity {
 
-    fun getMovieDetails(): ArrayList<String>? {
+    fun getMovieDetails(): movieDetails? {
         var id: Int?
         var texto= " "
         var pelicula: movieDetails? = null
         var titulo = "Gladiator"
         var title = ""
-        var datos : ArrayList<String>? = null
+        val datos : ArrayList<String>? = null
         var url :String
 
         id = ConnectionSearch().conexion(titulo)
@@ -36,8 +36,7 @@ class MoviesActivity {
 
                 pelicula = Gson().fromJson<movieDetails>(texto, movieDetails::class.java)
 
-                Log.d("Titulo:", pelicula?.original_title)
-                Log.d("Calificación:", pelicula?.vote_average.toString())
+                title = pelicula?.original_title!!
             }catch (fnfe: FileNotFoundException) {
                 Log.d("ERROR: ", "No se ha podido encontrar la película")
             } catch (npe: NullPointerException) {
@@ -49,11 +48,8 @@ class MoviesActivity {
         t.start()
         t.join()
 
-        datos?.add("https://image.tmdb.org/t/p/w500/${pelicula?.poster_path}")
-        datos?.add(title)
 
 
-
-        return datos
+        return pelicula
     }
 }

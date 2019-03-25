@@ -26,10 +26,7 @@ class ConnectionSearch {    //Metodo para realizar la conexion a la URL y obtene
                                                                                               //Tenemos que especificar que tipo de datos contendra el JSON(en este caso moviesSearch), pasamos la info de la URL y la clase del POJO. results es el tipo de dato que queremos sacar
                 for(i in 0..datos!!.lastIndex) {
                     if(titulo == datos!![i]!!.title) //comprobamos que el titulo que buscamos coincida con el que nos devuelve
-                        Log.d("ID:", datos!![i]!!.id.toString())
-                        Log.d("Titulo:", datos!![i]!!.title.toString())
-                        Log.d("Lenguaje:", datos!![i]!!.original_language.toString())
-                        id = datos!![i]!!.id //Guardamos la ID en una variable. Esta variable solo guardara la ID dentro del hilo.
+                        id = datos!![0]!!.id //Guardamos la ID en una variable. Esta variable solo guardara la ID dentro del hilo.
                 }
 
         }
