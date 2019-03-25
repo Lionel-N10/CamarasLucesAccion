@@ -1,62 +1,62 @@
 package com.example.camaraslucesaccion.POJOS
 
-data class movie(
-    var ADULT : Boolean,
-    var BACKDROP_PATH : String?,
-    var BELONGS_TO_COLLECTION : belongs_to_collection?,
-    var BUDGET : Int,
-    var GENRES : List<genres>,
-    var HOMEPAGE : String?,
-    var ID : Int,
-    var IMDB_ID : String?,
-    var ORIGINAL_LANGUAGE : String,
-    var ORIGINAL_TITLE : String,
-    var OVERVIEW : String?,
-    var POPULARITY : Double?,
-    var POSTER_PATH : String?,
-    var PRODUCTION_COMPANIES : List<production_companies>,
-    var PRODUCTION_COUNTRIES : List<production_countries>,
-    var RELEASE_DATE : String,
-    var REVENUE : Int,
-    var RUNTIME : Int?,
-    var SPOKEN_LANGUAJES : List<spoken_languajes>,
-    var STATUS : String,
-    var TAGLINE : String?,
-    var TITLE : String,
-    var VIDEO : Boolean,
-    var VOTE_AVERAGE : Double,
-    var VOTE_COUNT : Int
+data class movieDetails(
+    val adult : Boolean,
+    val backdrop_path : String?,
+    val belongs_to_collection: belongs_to_collection?,
+    val budget : Int,
+    val genres: List<genres>,
+    val homepage : String?,
+    val id : Int,
+    val imdb_id : String?,
+    val original_language : String,
+    val original_title: String,
+    val overview : String?,
+    val popularity : Double?,
+    val poster_path : String?,
+    val production_companies: List<production_companies>,
+    val production_countries: List<production_countries>,
+    val release_date : String,
+    val revenue : Int,
+    val runtime : Int?,
+    val spoken_languajes : List<spoken_languajes>,
+    val status : String,
+    val tagline : String?,
+    val title : String,
+    val video : Boolean,
+    val vote_average : Double,
+    val vote_count : Int
 )
 
 data class belongs_to_collection(
-    var ID : Int,
-    var NAME : String,
-    var POSTER_PATH: String?,
-    var BACKDROP_PATH: String?
+    val id : Int,
+    val name : String,
+    val poster_path: String?,
+    val backdrop_path: String?
 )
 
 
 data class genres(
-    var ID : Int,
-    var NAME : String
+    val id : Int,
+    val name : String
 )
 
 
 data class production_companies(
-    var NAME : String,
-    var ID: Int,
-    var LOGO_PATH : String?,
-    var ORIGIN_COUNTRY : String
+    val name : String,
+    val id: Int,
+    val logo_path : String?,
+    val origin_country : String
 )
 
 
 data class production_countries(
-    var ISO_3166_1 : String,
-    var NAME : String
+    val iso_3166_1 : String,
+    val name : String
 )
 
 
 data class spoken_languajes(
-    var ISO_639_1 : String,
-    var NAME : String
+    val iso_639_1 : String,
+    val name : String
 )
