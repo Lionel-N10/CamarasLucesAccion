@@ -9,12 +9,12 @@ import java.net.URL
 
 class ConnectionSearch {    //Metodo para realizar la conexion a la URL y obtener datos mediante un JSON
 
-    fun conexion(titulo: String): Int {
+    fun conexion(titulo: String): Array<Int>? {
 
         var texto: String = ""
         var titulo: String = "Gladiator"
         var datos: List<movie_Results?>?  //Creamos la variable del tipo que necesitemos dependiendo del POJO
-        var id: Int = 0
+        var id : Array<Int>? = null
 
 
        var t = Thread { //Creamos el hilo principal para obtener info de la URL
@@ -26,7 +26,7 @@ class ConnectionSearch {    //Metodo para realizar la conexion a la URL y obtene
                                                                                               //Tenemos que especificar que tipo de datos contendra el JSON(en este caso moviesSearch), pasamos la info de la URL y la clase del POJO. results es el tipo de dato que queremos sacar
                 for(i in 0..datos!!.lastIndex) {
                     if(titulo == datos!![i]!!.title) //comprobamos que el titulo que buscamos coincida con el que nos devuelve
-                        id = datos!![0]!!.id //Guardamos la ID en una variable. Esta variable solo guardara la ID dentro del hilo.
+                        id!![i] = datos!![i]!!.id //Guardamos la ID en un array para almacenar los ID de los resultados obtenidos
                 }
 
         }
